@@ -1,5 +1,5 @@
 {
-  "name": "react-main-concept",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,7 +42,6 @@
   "devDependencies": {
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.0",
-    "prop-types": "^15.8.1"
+    "prettier": "^3.0.0"
   }
 }
