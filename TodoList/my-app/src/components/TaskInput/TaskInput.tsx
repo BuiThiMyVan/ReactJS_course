@@ -2,15 +2,16 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './taskInput.module.scss'
 import { Todo } from '../../@types/todo.type'
+import connect, {ExtraInfoType} from '../../HOC/connect'
 
-interface TaskInputProps {
+interface TaskInputProps extends ExtraInfoType {
   addTodo: (name: string) => void
   currentTodo: Todo | null
   editTodo: (name: string) => void
   finishEditTodo: () => void
 }
-export default function TaskInput(props: TaskInputProps) {
-  const { addTodo, currentTodo, editTodo, finishEditTodo } = props
+function TaskInput(props: TaskInputProps) {
+  const { addTodo, currentTodo, editTodo, finishEditTodo, debug, log} = props
   const [name, setName] = useState<string>('')
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -61,3 +62,5 @@ TaskInput.propTypes = {
   editTodo: PropTypes.func.isRequired,
   finishEditTodo: PropTypes.func.isRequired
 }
+
+export default connect<TaskInputProps>(TaskInput)

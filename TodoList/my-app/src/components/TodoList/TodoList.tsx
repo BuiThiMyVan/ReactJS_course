@@ -3,6 +3,7 @@ import TaskInput from '../TaskInput'
 import TaskList from '../TaskList'
 import styles from './toDoList.module.scss'
 import { Todo } from '../../@types/todo.type'
+import connect from '../../HOC/connect'
 
 interface HandleNewTodos {
   (todos: Todo[]): Todo[]
